@@ -28,7 +28,7 @@ public class StudentSchedule {
    }
 
    public int[] getSchedule() {
-       int[] list = {studentId, period1,  period2,  period3,  period4,
+       int[] list = {period1,  period2,  period3,  period4,
                period5, period6, period7, period8, period9, period10};
        return list;
    }
