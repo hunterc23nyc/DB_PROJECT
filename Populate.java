@@ -35,9 +35,10 @@ public class Populate {
         ArrayList<String> rawStudent = getFileData("src/student");
         ArrayList<Student> studentInfo = new ArrayList<Student>();
         for (String stu : rawStudent) {
-            String[] words = stu.split("\\s+");
-            studentInfo.add(new Student(words[0], words[1]));
+           String[] words = stu.split("\\s+");
+           studentInfo.add( new Student(words[0], words[1]) );
         }
+
 
         ArrayList<String> rawRoom = getFileData("src/room");
         ArrayList<Room> roomInfo = new ArrayList<Room>();
