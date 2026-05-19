@@ -31,6 +31,7 @@ public class Populate {
             departmentInfo.add(new Department(dep));
         }
 
+
         ArrayList<String> rawStudent = getFileData("src/student");
         ArrayList<Student> studentInfo = new ArrayList<Student>();
         for (String stu : rawStudent) {
