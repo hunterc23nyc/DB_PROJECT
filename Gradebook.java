@@ -4,12 +4,12 @@ public class Gradebook {
    int offeringId = -1;
 
 
-   public Gradebook (int studentId, int offering_id, int[] assignments) {
+   public Gradebook (int studentId, int offeringId, int[] assignments) {
        for (int i = 0; i < assignments.length; i++) {
            this.assignments[i] = assignments[i];
        }
        this.studentId = studentId;
-       this.offeringId = offering_id;
+       this.offeringId = offeringId;
    }
 
 
