@@ -12,11 +12,12 @@ public class Populate {
 //        System.setOut(fileStream);
 
         ArrayList<String> rawTeacher = getFileData("src/teacher");
-        ArrayList<Teacher> teacherInfo = new ArrayList<Teacher>();
+        ArrayList<Teacher> TeacherInfo = new ArrayList<Teacher>();
         for (String tea: rawTeacher) {
-            String[] words = tea.split("\\s+", 3);
-            teacherInfo.add((new Teacher(Integer.parseInt(words[0]), words[1], words[2])));
+           String[] words = tea.split("\\s+", 3);
+           TeacherInfo.add((new Teacher(Integer.parseInt(words[0]), words[1], words[2])));
         }
+
 
         ArrayList<String> rawCourse = getFileData("src/Courses.txt");
         ArrayList<Course> courseInfo = new ArrayList<Course>();
