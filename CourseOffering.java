@@ -43,6 +43,4 @@ public class CourseOffering {
    public String toString(){
        return "INSERT INTO course_offering (course_id, room_id, period, teacher_id) VALUES (" + courseId + ", " + roomId +", " + period + ", " + teacherId + ");";
    }
-
-
 }
