@@ -122,12 +122,13 @@ public class Populate {
 
 
 
-        ArrayList<Gradebook> gradebookInfo = new ArrayList<Gradebook>();
-        for (StudentSchedule s : studentScheduleInfo) {
+        ArrayList<Gradebook> Gradebook_info = new ArrayList<Gradebook>();
+        for (StudentSchedule s : StudentSchedule_info) {
             for(int i : s.getSchedule()) {
-                gradebookInfo.add( new Gradebook(s.getStudentId(), i, randomList() ) );
+               Gradebook_info.add( new Gradebook(s.getstudentId(), i, randomList() ) );
             }
-        }
+        }    
+
 
 //        printInput(departmentInfo);
 //        printInput(studentInfo);
