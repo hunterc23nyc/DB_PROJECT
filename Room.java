@@ -5,6 +5,13 @@ public class Room {
    public Room(String room) {
        this.room = room;
    }
+
+
+   public String getRoom() {
+      return  room;
+   }
+
+
   
    public String toString() {
        return "INSERT INTO room (room_name) VALUES ('" + room + "');";
