@@ -13,14 +13,12 @@ public class Populate {
 //        PrintStream fileStream = new PrintStream("src/insert");
 //        System.setOut(fileStream);
 
-
        ArrayList<String> rawTeacher = getFileData("src/teacher");
        ArrayList<Teacher> teacherInfo = new ArrayList<Teacher>();
        for (String tea: rawTeacher) {
            String[] words = tea.split("\\s+", 3);
            teacherInfo.add((new Teacher(Integer.parseInt(words[0]), words[1], words[2])));
        }
-
 
        ArrayList<String> rawCourse = getFileData("src/Courses.txt");
        ArrayList<Course> courseInfo = new ArrayList<Course>();
@@ -29,13 +27,11 @@ public class Populate {
            courseInfo.add( new Course(words[0], words[1]));
        }
 
-
        ArrayList<String> rawDepartment = getFileData("src/department");
        ArrayList<Department> departmentInfo = new ArrayList<Department>();
        for (String dep: rawDepartment) {
            departmentInfo.add(new Department(dep));
        }
-
 
        ArrayList<String> rawStudent = getFileData("src/student");
        ArrayList<Student> studentInfo = new ArrayList<Student>();
@@ -43,7 +39,6 @@ public class Populate {
            String[] words = stu.split("\\s+");
            studentInfo.add(new Student(words[0], words[1]));
        }
-
 
        ArrayList<String> rawRoom = getFileData("src/room");
        ArrayList<Room> roomInfo = new ArrayList<Room>();
@@ -53,9 +48,7 @@ public class Populate {
 
 
 
-
-
-
+      
        ArrayList<CourseOffering> offer = new ArrayList<>();
 
 
@@ -68,12 +61,10 @@ public class Populate {
 
 
 
-       while (usedCourses.size() < courseSize) {
+       while (usedCourses.size() < courseSize-1) {
 
 
            int courseID = rand.nextInt(courseSize-1) + 1;
-
-
 
 
            if (courseCount[courseID] >= 5) {
@@ -81,16 +72,10 @@ public class Populate {
            }
 
 
-
-
            boolean valid = false;
 
 
-
-
            while (!valid) {
-
-
 
 
                int period = rand.nextInt(10) + 1;
@@ -98,29 +83,19 @@ public class Populate {
                int teacherID = rand.nextInt(teacherInfo.size()) + 1;
 
 
-
-
                valid = true;
-
-
 
 
                for (CourseOffering co : offer) {
 
 
-
-
                    if (co.getPeriod() == period) {
-
-
 
 
                        if (co.getRoomId() == roomID) {
                            valid = false;
                            break;
                        }
-
-
 
 
                        if (co.getTeacherId() == teacherID) {
@@ -131,28 +106,18 @@ public class Populate {
                }
 
 
-
-
                if (valid) {
-
-
 
 
                    CourseOffering newOffer =
                            new CourseOffering(id, courseID, roomID, period, teacherID);
 
 
-
-
                    offer.add(newOffer);
-
-
 
 
                    courseCount[courseID]++;
                    usedCourses.add(courseID);
-
-
 
 
                    id++;
@@ -162,7 +127,6 @@ public class Populate {
 
 
 //        offer.sort(Comparator.comparing(CourseOffering::getPeriod));
-
 
 
 
@@ -182,9 +146,6 @@ public class Populate {
 
 
 
-
-
-
        ArrayList<Gradebook> gradebookInfo = new ArrayList<Gradebook>();
        for (StudentSchedule s : studentScheduleInfo) {
            for(int i : s.getSchedule()) {
@@ -193,14 +154,14 @@ public class Populate {
        }
 
 
-//        printInput(departmentInfo);
-//        printInput(studentInfo);
-//        printInput(roomInfo);
-//        printInput(courseInfo);
-//        printInput(teacherInfo);
+        printInput(departmentInfo);
+        printInput(studentInfo);
+        printInput(roomInfo);
+        printInput(courseInfo);
+        printInput(teacherInfo);
        printInput(offer);
-//        printInput(studentScheduleInfo);
-//        printInput(gradebookInfo);
+        printInput(studentScheduleInfo);
+        printInput(gradebookInfo);
    }
 
 
