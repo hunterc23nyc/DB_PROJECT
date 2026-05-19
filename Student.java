@@ -13,7 +13,7 @@ public class Student {
    }
 
 
-   public int getstudentId() {
+   public int getStudentId() {
        return studentId;
    }
 
